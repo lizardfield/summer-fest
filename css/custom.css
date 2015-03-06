@@ -1,4 +1,20 @@
 /*! adding stuff! -Elizabeth */
+
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #23527c;
+  text-decoration: underline;
+}
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
 .sidebar {
   background-color: gray;
 }
@@ -22,6 +38,18 @@
 .festival-box-inner img {
 	height: 200px;
 	width: 250px;
+}
+
+.nameplate {
+	width: 340px;
+	height: 42px;
+	margin: 5px;
+}
+
+.interactive-title {
+	display: inline-block;
+	orphans: 3;
+	widows: 3;
 }
 
 @media (min-width: 768px) {
