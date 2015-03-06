@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Daily Texan Life & Arts Summer Festival Interactive concept">
+    <meta name="author" content="Elizabeth">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>summer fest map concept</title>
+
+    <!-- css -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/leaflet.css" rel="stylesheet">
+    <link href="./css/custom.css" rel="stylesheet">
+
+    <!-- JavaScript -->
+    <script type='text/javascript' src="./js/bootstrap.js"></script>
+    <script type='text/javascript' src="./js/leaflet.js"></script>
+    <script type='text/javascript' src="./js/jquery.js"></script>
+    <script type='text/javascript' src="./js/custom.js"></script>
+
+    <!-- map -->
+    <script type="text/javascript">// 
+      window.onload = function () {
+          var map = L.map('map').setView([39.50,-98.35], 4);
+          L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          }).addTo(map);
+      };
+    </script>
+
+  </head>
+
+  <body>
+
+  <!-- Header: The Daily Texan & Title -->
+    <div class="container-fluid" style="background-color:gray">
+      <div class="row">
+        <div class="col-lg-4">THE DAILY TEXAN</div>
+        <div class="col-lg-8">Summer Festivals</div>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <!-- Sidebar -->
+      <div class="sidebar col-12 col-sm-2 col-lg-2 left">
+        <h3>Find an Artist</h3>
+        <ul class="artists">
+          <li><a href="#">Dingle Hoober</a></li>
+          <li><a href="#">Staghenflaur</a></li>
+          <li><a href='#'>The Boops</a></li>
+          <li><a href='#'>Boopy and the Beepbops</a></li>
+          <li><a href='#'>Run the Grooven Chooven</a></li>
+          <li><a href='#'>Brocks</a></li>
+          <li><a href='#'>A Sweater</a></li>
+        </ul>
+      </div> <!-- close sidebar div -->
+
+      <!-- map -->
+      <div class="col-12 col-sm-10 col-lg-10 main" id="map" style="border: 1px solid #AAA;"></div>
+
+      <!-- festivals chronologically -->
+      <div class="container festival-box-outer" style="background-color:cyan">
+        <div class="container festival-box-inner">
+          <a href="#"><img src="" alt="Festival 1"</a>
+          <a href="#"><img src="" alt="Festival 2"></a>
+          <a href="#"><img src="" alt="Festival 3"></a>
+          <a href="#"><img src="" alt="Festival 4"></a>
+          <a href="#"><img src="" alt="Festival 5"></a>
+          <a href="#"><img src="" alt="Festival 6"></a>
+          <a href="#"><img src="" alt="Festival 7"></a>
+          <a href="#"><img src="" alt="Festival 8"></a>
+        </div>
+      </div>
+
+  </div>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

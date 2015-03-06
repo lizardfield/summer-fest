@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+.fixed {
+    position: fixed;
+    width: 0px;
+    top: 120px;
+    left: -10px;
+    height: 200px;
+    z-index: 1;
+    border: 5px solid #ccc;
+    background-image: url("http://www.cinemablend.com/images/news_img/7768/_7768.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.fixedbutton {
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+background-color:#ededed;
+text-indent:0;
+border:1px solid #dcdcdc;
+display:inline-block;
+color:#777777;
+font-family:"Courier", sans-serif;
+font-size:15px;
+font-weight:bold;
+font-style:normal;
+height:50px;
+line-height:50px;
+width:100px;
+text-decoration:none;
+text-align:center;
+text-shadow:1px 1px 0px #ffffff;
+}.fixedbutton:hover {
+background-color:#dfdfdf;
+}.fixedbutton:active {
+position:relative;
+top:1px;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script>
+$(document).ready(function() {
+$('.fixedbutton').toggle(function() {
+    $('.fixed').stop().animate({
+        width: "200px",
+    }, 1000);
+}, function() {
+    $('.fixed').stop().animate({
+        width: "-10px",
+    }, 1000);
+});
+});
+</script>
+</head>
+<body>
+<div class="fixed">
+</div>
+<a href="#" class="fixedbutton">Button</a>
+</body>
+</html>
