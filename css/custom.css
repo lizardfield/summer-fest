@@ -27,7 +27,7 @@ a:focus {
 .festival-box-outer {
 	display: block;
 	overflow: scroll;
-
+	width: 100%;
 	height: 210px;
 }
 
@@ -47,9 +47,24 @@ a:focus {
 }
 
 .interactive-title {
-	display: inline-block;
-	orphans: 3;
-	widows: 3;
+	display: inline;
+	font-family: inherit;
+  	font-weight: 500;
+  	line-height: 1.1;
+  	color: inherit;
+  	margin-top: 20px;
+  	margin-bottom: 10px;
+  	padding-left: 20px;
+    font-size: 30px;
+}
+
+.head {
+	margin:0px;
+	top:0px;
+	left:0px;
+	display:block;
+	width:100%;
+	height:50px;
 }
 
 @media (min-width: 768px) {
