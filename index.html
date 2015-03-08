@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Daily Texan Life & Arts Summer Festival Interactive concept">
     <meta name="author" content="Elizabeth">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="icon" href="../../favicon.ico">
 
+    <!-- "tell[s] the mobile browser to disable unwanted scaling of the page and set it to its actual size" -->
     <title>summer fest map concept</title>
 
     <!-- css -->
@@ -35,6 +37,7 @@
             position: 'topright'
           }).addTo(map);
       };
+
     </script>
 
   </head>
@@ -42,16 +45,15 @@
   <body>
 
   <!-- Header: The Daily Texan & Title -->
-
     <div class="head">
         <a href="http://www.dailytexanonline.com/"><img class="nameplate" src="./images/nameplate_desktop.png" alt="The Daily Texan"></a>
         <div class="interactive-title">Summer Fest Map</div>
     </div>
 
-    <div class="row">
+    <div class="body">
 
       <!-- Sidebar -->
-      <div class="sidebar col-12 col-sm-2 col-lg-2 left">
+      <div class="sidebar col-sm-2 col-lg-2 left">
         <h3>Find an Artist</h3>
         <ul class="artists">
           <li><a href="#">Artist 1</a></li>
@@ -65,12 +67,9 @@
       </div> <!-- close sidebar div -->
 
       <!-- map -->
-      <div class ="main" id="map"></div>
-
-    </div> <!-- close div holding sidebar and map -->
+      <div class="col-sm-10 col-lg-10 main" id="map"></div>
 
       <!-- festivals chronologically -->
-      <div class="row">
         <div class="festival-box-outer" style="background-color:cyan">
           <div class="container festival-box-inner">
             <a href="#"><img src="" alt="Festival 1"></a>
@@ -83,10 +82,7 @@
             <a href="#"><img src="" alt="Festival 8"></a>
           </div>
         </div>
-      </div>
-     
 
-  </div>
-
+    </div>
   </body>
 </html>
