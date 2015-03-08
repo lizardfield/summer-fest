@@ -37,6 +37,7 @@ h3 {
 .sidebar {
   	background-color: #4C4C4C;
   	height: 80%;
+  	overflow-y: scroll;
 }
 
 .artists {
@@ -71,6 +72,20 @@ h3 {
 }
 
 .interactive-title {
+	text-align: center;
+	display: inline;
+	font-family: inherit;
+  	font-weight: 500;
+  	line-height: 1.1;
+  	color: inherit;
+  	margin-top: 20px;
+  	margin-bottom: 10px;
+  	padding-left: 20px;
+    font-size: 30px;
+}
+
+.interactive-cred {
+	float: right;
 	display: inline;
 	font-family: inherit;
   	font-weight: 500;
@@ -104,6 +119,7 @@ h3 {
 }
 
 .image h2 {
+	text-align: center;
 	background: rgba(0, 0, 0, 0.75);
 	color: white;
 	font-family: 'Roboto', sans-serif;
