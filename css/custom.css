@@ -15,30 +15,55 @@ html, body {
 
 /* the rest */
 a {
-  color: #337ab7;
-  text-decoration: none;
+	color: #B7B7B7;
+	text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #23527c;
-  text-decoration: underline;
+	color: #FFFFFF;
+	text-decoration: underline;
 }
 a:focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
+	outline: thin dotted;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+
+/* festival image text overlay */
+h2 { 
+	position: absolute; 
+	top: 80%; 
+	left: 0; 
+	width: 100%; 
+}
+
+h2 span { 
+	color: white; 
+	font: bold 24px/45px Helvetica, Sans-Serif; 
+	letter-spacing: -1px;  
+	background: rgb(0, 0, 0); /* fallback color */
+	background: rgba(0, 0, 0, 0.7);
+	padding: 10px; 
+}
+
+/* "Find an Artist" */
+h3 {
+	color: #EDEDED;
 }
 
 .sidebar {
-  background-color: gray;
+  	background-color: #4C4C4C;
+  	height: 80%;
 }
+
 .artists {
 	padding: 0;
 	margin: 0;
-  list-style: none;
+  	list-style: none;
 }
 
 .festival-box-outer {
+	background-color: #5E5E5E;
 	display: block;
 	overflow: scroll;
 	width: 100%;
@@ -47,11 +72,14 @@ a:focus {
 
 .festival-box-inner {
 	width: 3000px;
+	height: 100%;
 }
 
 .festival-box-inner img {
-	height: 150px;
+	padding-top: 5px;
+	height: 95%;
 	width: 200px;
+   	position: relative;
 }
 
 .nameplate {
