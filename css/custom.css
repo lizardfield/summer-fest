@@ -7,6 +7,7 @@ body {
 }
 html, body {
     height: 100%;
+    width: 100%;
 }
 
 .body {
@@ -55,6 +56,7 @@ h3 {
 
 .festival-box-inner {
 	background-color: #5E5E5E;
+	width: 100%;
 	height: 100%;
 	overflow-x: scroll;
 }
@@ -85,12 +87,12 @@ h3 {
 }
 
 .head {
-	margin:0px;
-	top:0px;
-	left:0px;
-	display:block;
-	width:100%;
-	height:50px;
+	margin: 0px;
+	top: 0px;
+	left: 0px;
+	display: block;
+	width: 100%;
+	height: 50px;
 }
 
 #map {

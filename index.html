@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="icon" href="../../favicon.ico">
 
-    <!-- "tell[s] the mobile browser to disable unwanted scaling of the page and set it to its actual size" -->
     <title>summer fest map concept</title>
 
     <!-- css -->
@@ -18,27 +17,16 @@
     <link href="./css/leaflet.css" rel="stylesheet">
     <link href="./css/custom.css" rel="stylesheet">
 
+    <!-- jQuery -->
+    <script src="./js/jquery.js"></script>
+    <script src="./js/custom.js"></script>
+
     <!-- JavaScript -->
     <script type='text/javascript' src="./js/bootstrap.js"></script>
     <script type='text/javascript' src="./js/leaflet.js"></script>
-    <script type='text/javascript' src="./js/jquery.js"></script>
-    <script type='text/javascript' src="./js/custom.js"></script>
 
     <!-- map -->
-    <script type="text/javascript">// 
-      window.onload = function () {
-          var map = L.map('map', {
-            zoomControl: false
-          }).setView([39.50,-98.35], 4);
-          L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          }).addTo(map);
-          new L.Control.Zoom({
-            position: 'topright'
-          }).addTo(map);
-      };
-
-    </script>
+    <script type="text/javascript" src="./js/map.js"></script>
 
   </head>
 
@@ -58,11 +46,11 @@
         <ul class="artists">
           <li><a href="#">Zedd</a></li>
           <li><a href="#">Artist 2</a></li>
-          <li><a href='#'>Artist 3</a></li>
-          <li><a href='#'>Artist 4</a></li>
-          <li><a href='#'>Artist 5</a></li>
-          <li><a href='#'>Artist 6</a></li>
-          <li><a href='#'>Artist 7</a></li>
+          <li><a href="#">Artist 3</a></li>
+          <li><a href="#">Artist 4</a></li>
+          <li><a href="#">Artist 5</a></li>
+          <li><a href="#">Artist 6</a></li>
+          <li><a href="#">Artist 7</a></li>
           <li><a href="#">Zedd</a></li>
           <li><a href="#">Zedd</a></li>
           <li><a href="#">Zedd</a></li>

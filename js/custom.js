@@ -1,10 +1,10 @@
 $(document).ready(function() {
-	$('.sidebar-toggle').toggle(function() {
-    $('.sidebar').stop().animate({
-        width: "200px",
-    }, 1000);
-	}, function() {
-    $('.sidebar').stop().animate({
-        width: "-10px",
-    }, 1000);
+
+	alert( "hi what's up" );
+
+	$.get( "http://127.0.0.1/photoMap/api/maps/1", function( data ) {
+		$( ".result" ).html( data );
+		alert( "Data get!" );
+	});
+
 });
