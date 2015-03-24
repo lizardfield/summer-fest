@@ -1,3 +1,29 @@
+// load data
+
+$(document).ready(function() {
+
+//  $.get("http://127.0.0.1:8000/photoMap/api/maps/1", function(data) {
+//    $(".result").html(data);
+//    alert("data get!");
+//  });
+  
+  function getData(callback) {
+    $.ajax({
+      type: "GET",
+      url: "http://127.0.0.1:8000/photoMap/api/maps/1/",
+      crossDomain: true,
+      dataType: "jsonp",
+      data: {'format': 'jsonp'},
+      success: callback
+    });
+  }
+
+  getData(console.log);
+
+}); // $(document).ready
+
+// leaflet
+
 window.onload = function () {
     var map = L.map('map', {
       zoomControl: false
