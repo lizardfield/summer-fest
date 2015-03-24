@@ -32,6 +32,7 @@ a:focus {
 
 
 .sidebar-title {
+	text-align: center;
 	color: #EDEDED;
 }
 
@@ -41,30 +42,25 @@ a:focus {
   	overflow-y: scroll;
 }
 
-.subevents {
+.subevent-scroll {
 	padding: 0;
 	margin: 0;
   	list-style: none;
 }
 
-.festival-box-outer {
-	display: block;
+.bottom-box-outer {
+	background-color: #5E5E5E;
+	display: inline-block;
 	width: 100%;
-	height: 20%;
-	overflow-x: scroll;
+	height: 19.5%;
 }
 
-.festival-box-inner {
+.bottom-box-inner {
 	background-color: #5E5E5E;
 	width: 100%;
 	height: 100%;
 	overflow-x: scroll;
-}
-
-.festival-box-inner img {
-	padding-top: 5px;
-	height: 95%;
-	width: 200px;
+	margin-right: -999em;
 }
 
 .nameplate {
@@ -99,22 +95,31 @@ a:focus {
 	height: 80%;
 }
 
-.image-scroll {
+.bottom-scroll {
 	padding: 0;
 	margin: 0;
-	display: inline;
+	height: 100%;
   	list-style: none;
+  	margin-right: -999em;
+  	float: left;
+  	white-space: nowrap;
 }
 
-/* text overlays on festival images */
-.image {
+.subevent {
 	width: 200px;
 	height: 100%;
 	position: relative;
 	float: left;
+	display: inline;
 }
 
-.image h2 {
+.subevent img {
+	padding-top: 5px;
+	height: 95%;
+	width: 200px;
+}
+
+.subevent h2 {
 	text-align: center;
 	background: rgba(0, 0, 0, 0.75);
 	color: white;
