@@ -1,5 +1,3 @@
-/*! adding stuff! -Elizabeth */
-
 /* prepare page for map width resizing */
 body {
     padding: 0;
@@ -31,7 +29,9 @@ a:focus {
 }
 
 /* "Find an Artist" */
-h3 {
+
+
+.sidebar-title {
 	color: #EDEDED;
 }
 
@@ -41,7 +41,7 @@ h3 {
   	overflow-y: scroll;
 }
 
-.artists {
+.subevents {
 	padding: 0;
 	margin: 0;
   	list-style: none;
@@ -97,6 +97,13 @@ h3 {
 
 #map {
 	height: 80%;
+}
+
+.image-scroll {
+	padding: 0;
+	margin: 0;
+	display: inline;
+  	list-style: none;
 }
 
 /* text overlays on festival images */

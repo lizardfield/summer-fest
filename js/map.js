@@ -14,11 +14,21 @@ $(document).ready(function() {
     dataType: "jsonp",
     data: {'format': 'jsonp'},
     success: function (d) {
-      $(".interactive-title").replaceWith(d.name);
+      $(".interactive-title").html(d.name);
       document.title = d.name;
     }
-    });
+  });
 
+  $.ajax({
+    type: "GET",
+    url: "http://127.0.0.1:8000/photoMap/api/maps/1/",
+    crossDomain: true,
+    dataType: "jsonp",
+    data: {'format': 'jsonp'},
+    success: function (d) {
+      $(".sidebar-title").html("Filter by " + d.subevent_type);
+    }
+  });
 
 }); // $(document).ready
 
