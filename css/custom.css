@@ -29,8 +29,6 @@ a:focus {
 }
 
 /* "Find an Artist" */
-
-
 .sidebar-title {
 	text-align: center;
 	color: #EDEDED;
@@ -42,7 +40,7 @@ a:focus {
   	overflow-y: scroll;
 }
 
-.subevent-scroll {
+#subevent-scroll {
 	padding: 0;
 	margin: 0;
   	list-style: none;
@@ -95,7 +93,7 @@ a:focus {
 	height: 80%;
 }
 
-.bottom-scroll {
+#event-scroll {
 	padding: 0;
 	margin: 0;
 	height: 100%;
@@ -105,7 +103,7 @@ a:focus {
   	white-space: nowrap;
 }
 
-.subevent {
+.event {
 	width: 200px;
 	height: 100%;
 	position: relative;
@@ -113,13 +111,13 @@ a:focus {
 	display: inline;
 }
 
-.subevent img {
+.event img {
 	padding-top: 5px;
 	height: 95%;
 	width: 200px;
 }
 
-.subevent h2 {
+.event h2 {
 	text-align: center;
 	background: rgba(0, 0, 0, 0.75);
 	color: white;
@@ -132,4 +130,9 @@ a:focus {
 	left: 50%;
 	font-size: 2rem;
 	transform: translate(-50%, -50%);
+}
+
+/* event details pop-up upon click on marker */
+#overlay {
+
 }
