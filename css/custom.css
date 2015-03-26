@@ -1,4 +1,3 @@
-/* prepare page for map width resizing */
 body {
     padding: 0;
     margin: 0;
@@ -13,7 +12,6 @@ html, body {
 	width: 100%;
 }
 
-/* the rest */
 a {
 	color: #B7B7B7;
 	text-decoration: none;
@@ -111,7 +109,6 @@ a:focus {
   	list-style: none;
   	margin-right: -999em;
   	float: left;
-  	white-space: nowrap;
 }
 
 .event {
@@ -163,6 +160,11 @@ a:focus {
 	height: 50%;
 }
 
+#exit-button:hover {
+	color: #808080;
+	text-decoration: underline;
+}
+
 .background {
 	z-index: 1;
 	position: relative;
@@ -179,4 +181,14 @@ a:focus {
 	background-color: #000000;
 	pointer-events: none;
 	cursor: default;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    box-shadow: 0 0 1px rgba(255,255,255,.5);
 }

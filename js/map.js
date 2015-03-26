@@ -66,13 +66,22 @@ $(window).load(function () {
       var eventImage = "http://4.bp.blogspot.com/-MzZCzWI_6Xc/UIUQp1qPfzI/AAAAAAAAHpA/OTwHCJSWFAY/s1600/cats_animals_kittens_cat_kitten_cute_desktop_1680x1050_hd-wallpaper-753974.jpeg";
     };
 
+    // if it's only one day, just put the date once
+    if (this.date === this.endDate) {
+      var date = this.date;
+    } else {
+      var date = this.date + " to " + this.endDate;
+    };
+
+    // populate overlay
     $("#eventImg").html("<img src=" + eventImage + ">");
     $("#eventName").html(this.name);
-    $("#eventDate").html(this.date + " to " + this.endDate);
+    $("#eventDate").html(date);
     $("#eventDesc").html(this.description);
 
     $("#overlay").fadeToggle("fast");
     $("#fade-bg").fadeToggle("fast");
+
   }
 
 //  var populateSidebar = function(d) {
@@ -91,7 +100,6 @@ $(window).load(function () {
 
     // populate map w/ markers
     for (var i = 0; i < d.events.length; i++) {
-      console.log(d.events[i]);
       getData("http://127.0.0.1:8000/photoMap/api/events/" + d.events[i], placeEvents);
     }
   };
