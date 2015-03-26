@@ -10,6 +10,7 @@ html, body {
 
 .body {
 	height: calc(100% - 50px);
+	width: 100%;
 }
 
 /* the rest */
@@ -39,6 +40,16 @@ a:focus {
   	height: 80%;
   	overflow-y: scroll;
 }
+
+@media only screen (min-height: 480px) and (max-width: 800px) {
+	.sidebar {
+		display: none;
+	}
+
+	#map {
+		width: 100%;
+	}
+} /* not working, not sure why */
 
 #subevent-scroll {
 	padding: 0;
@@ -119,7 +130,7 @@ a:focus {
 
 .event h2 {
 	text-align: center;
-	background: rgba(0, 0, 0, 0.75);
+	background: rgba(0, 0, 0, 0.55);
 	color: white;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 900;
@@ -134,5 +145,38 @@ a:focus {
 
 /* event details pop-up upon click on marker */
 #overlay {
+	z-index: 20;
+	position: absolute;
+	top: 6%;
+	left: 6%;
+	right: 6%;
+	bottom: 6%;
+	margin: auto;
+	padding: 20px;
+	background: #FFFFFF;
+	border-radius: px;
+	overflow-y: scroll;
+}
 
+#overlay img {
+	width: 50%;
+	height: 50%;
+}
+
+.background {
+	z-index: 1;
+	position: relative;
+}
+
+#fade-bg {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	right: 0%;
+	bottom: 0%;
+	z-index: 2;
+	opacity: 0.5;
+	background-color: #000000;
+	pointer-events: none;
+	cursor: default;
 }

@@ -11,6 +11,7 @@ var getData = function(url, callback) {
 }
 
 $(window).load(function () {
+
   var map = L.map('map', {
     zoomControl: false
   }).setView([39.50,-98.35], 4);
@@ -58,8 +59,20 @@ $(window).load(function () {
     $("#subevent-scroll").append("<li>" + subevent.name + "</li>");
   }
 
-  var showEvent = function(details) {
-    console.log(this);
+  var showEvent = function(event) {
+    // set default image
+    var eventImage = this.image;
+    if (eventImage === null) {
+      var eventImage = "http://4.bp.blogspot.com/-MzZCzWI_6Xc/UIUQp1qPfzI/AAAAAAAAHpA/OTwHCJSWFAY/s1600/cats_animals_kittens_cat_kitten_cute_desktop_1680x1050_hd-wallpaper-753974.jpeg";
+    };
+
+    $("#eventImg").html("<img src=" + eventImage + ">");
+    $("#eventName").html(this.name);
+    $("#eventDate").html(this.date + " to " + this.endDate);
+    $("#eventDesc").html(this.description);
+
+    $("#overlay").fadeToggle("fast");
+    $("#fade-bg").fadeToggle("fast");
   }
 
 //  var populateSidebar = function(d) {
@@ -81,7 +94,15 @@ $(window).load(function () {
       console.log(d.events[i]);
       getData("http://127.0.0.1:8000/photoMap/api/events/" + d.events[i], placeEvents);
     }
-  }
+  };
 
   getData("http://127.0.0.1:8000/photoMap/api/maps/1/", populateMap);
+
+  $("#overlay").hide();
+  $("#fade-bg").hide();
+  $("#exit-button").click(function() {
+    $("#overlay").fadeToggle("fast");
+    $("#fade-bg").fadeToggle("fast");
+  });
+
 });
