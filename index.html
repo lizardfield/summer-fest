@@ -20,9 +20,15 @@
     <!-- jQuery -->
     <script src="./js/jquery.js"></script>
 
+    <!-- jQuery plugins-->
+    <script src="./js/jquery-dateFormat.min.js"></script>
+
     <!-- JavaScript -->
     <script type='text/javascript' src="./js/bootstrap.js"></script>
     <script type='text/javascript' src="./js/leaflet.js"></script>
+
+    <!-- MapQuest -->
+    <script src="http://open.mapquestapi.com/sdk/leaflet/v1.s/mq-map.js?key=Fmjtd%7Cluu8216an5%2Crw%3Do5-947w0w"></script>
 
     <!-- map -->
     <script type="text/javascript" src="./js/map.js"></script>
@@ -49,42 +55,21 @@
       <div class="bottom-box-outer">
         <div class="bottom-box-inner">
           <ul id="event-scroll">
-            <li class="event">
-              <a href="#"><img src="http://phandroid.s3.amazonaws.com/wp-content/uploads/2014/04/Coachella-2013-Live-Stream-Channel-1.jpg" alt="Festival 1">
-              <h2>coachella<br> feb 2 - 6</h2></a>
-            </li>
 
-            <li class="event">
-              <a href="#"><img src="https://thenypost.files.wordpress.com/2014/09/usa-nevada_burningman-36.jpg?w=915" alt="Festival 2">
-              <h2>burning man<br> feb 12 - 16</h2></a>
-            </li>
-
-            <li class="event">
-              <a href="#"><img src="http://hiphop-connections.com/wp-content/uploads/2014/02/Buku-Music-Festival-2013-Review.jpg" alt="Festival 3">
-              <h2>buku<br> mar 2 - 6</h2></a>
-            </li>
-
-            <li class="event">
-              <a href="#"><img src="http://www.poppressinternational.com/wp-content/uploads/2012/06/FPSF2_pt2_044.jpg" alt="Festival 4">
-              <h2>fpsf<br> feb 2 - 6</h2></a
-            </li>
-
-            <li class="event">
-              <a href="#"><img src="http://phandroid.s3.amazonaws.com/wp-content/uploads/2014/04/Coachella-2013-Live-Stream-Channel-1.jpg" alt="Festival 5">
-              <h2>coachella<br> feb 2 - 6</h2></a>
-            </li>
-            </ul>
-          </div> <!-- close inner box div -->
-        </div> <!-- close outer box div -->
+          </ul>
+        </div> <!-- close inner box div -->
+      </div> <!-- close outer box div -->
 
       
       <div id="fade-bg"></div>
       <div id="overlay">
         <div id="exit-button">close</div>
-        <div id="eventImg" align="center"></div>
-        <p><h2 id="eventName"></h2></p>
-        <p><h3 id="eventDate"></h3></p>
-        <p id="eventDesc"></p>
+        <div id="overlay-text">
+          <p><h1 id="eventName"></h1></p>
+          <p><h2 id="eventDate"></h2></p>
+          <p id="eventDesc"></p>
+          <button class="btn btn-default btn-lg">Go to Official Site</button>
+        </div>
       </div>
 
     </div> <!-- close body div -->

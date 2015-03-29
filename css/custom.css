@@ -39,16 +39,6 @@ a:focus {
   	overflow-y: scroll;
 }
 
-@media only screen (min-height: 480px) and (max-width: 800px) {
-	.sidebar {
-		display: none;
-	}
-
-	#map {
-		width: 100%;
-	}
-} /* not working, not sure why */
-
 .bottom-box-outer {
 	background-color: #5E5E5E;
 	display: inline-block;
@@ -136,6 +126,8 @@ a:focus {
 
 /* event details pop-up upon click on marker */
 #overlay {
+	background-image: none;
+	background-size: 100%;
 	z-index: 20;
 	position: absolute;
 	top: 6%;
@@ -144,14 +136,8 @@ a:focus {
 	bottom: 6%;
 	margin: auto;
 	padding: 20px;
-	background: #FFFFFF;
-	border-radius: px;
+	border-radius: 5px;
 	overflow-y: scroll;
-}
-
-#overlay img {
-	width: 50%;
-	height: 50%;
 }
 
 #exit-button:hover {
@@ -185,4 +171,22 @@ a:focus {
     border-radius: 4px;
     background-color: rgba(0,0,0,.5);
     box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+.leaflet-bottom {
+	z-index: 2; 
+}
+
+#overlay-text {
+	background: rgba(0, 0, 0, 0.75);
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 900;
+	position: relative;
+	top: 50%;
+	    -webkit-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	    transform: translateY(-50%);
+	text-align: center;
+	padding: 50px;
 }

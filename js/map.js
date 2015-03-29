@@ -1,8 +1,8 @@
 // helper ajax request function
-var getData = function(url, callback) {
+var getData = function(url4, callback) {
   $.ajax({
     type: "GET",
-    url: url,
+    url: url4,
     crossDomain: true,
     dataType: "jsonp",
     data: {'format': 'jsonp'},
@@ -10,14 +10,16 @@ var getData = function(url, callback) {
   });
 }
 
+// set default event image
+var defaultImage = "http://www.nbn.org.il/gosouth/wp-content/uploads/2014/05/summer.jpg";
+
 $(window).load(function () {
 
+
   var map = L.map('map', {
-    zoomControl: false
+    zoomControl: false,
+    layers: MQ.mapLayer(),
   }).setView([39.50,-98.35], 4);
-  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
 
  // move zoom controls to top right
   new L.Control.Zoom({
@@ -47,18 +49,18 @@ $(window).load(function () {
     // set default image for bottom scroll
     var eventImage = event.image;
     if (eventImage === null) {
-      var eventImage = "http://4.bp.blogspot.com/-MzZCzWI_6Xc/UIUQp1qPfzI/AAAAAAAAHpA/OTwHCJSWFAY/s1600/cats_animals_kittens_cat_kitten_cute_desktop_1680x1050_hd-wallpaper-753974.jpeg";
+      var eventImage = defaultImage;
     };
+
+    var startingDate = new Date(event.date);
+    var endingDate = new Date(event.endDate);
 
     // add event to bottom scroll
     var eventBox = $("<li/>", { "class": "event",}).bind("click", function() { getEvent.call({id: event.id}); } );
-    eventBox.append("<a href=#><img src='" + eventImage + "' alt='" + event.name + "'><h2>" + event.name + "<br>" + event.date + "</h2></a>");
+    eventBox.append("<a href=#><img src='" + eventImage + "' alt='" + event.name + "'><h2>" + event.name + "<br>" + $.format.date(event.date, "MMM d") + "</h2></a>");
     $("#event-scroll").append(eventBox);
 
-
-    // $("#event-scroll").append("<li class='event'><a href=#><img src='" + eventImage + "' alt='" + event.name + "'><h2>" + event.name + "<br>" + event.date + "</h2></a></li>")
-
-    // $
+    // console.log($.format.date(event.date, "ddd, MMMM d"))
   }
 
   var getEvent = function() {
@@ -69,18 +71,22 @@ $(window).load(function () {
     // set default image
     var eventImage = event.image;
     if (eventImage === null) {
-      var eventImage = "http://4.bp.blogspot.com/-MzZCzWI_6Xc/UIUQp1qPfzI/AAAAAAAAHpA/OTwHCJSWFAY/s1600/cats_animals_kittens_cat_kitten_cute_desktop_1680x1050_hd-wallpaper-753974.jpeg";
+      var eventImage = defaultImage;
     };
 
     // if it's only one day, just put the date once
-    if (event.date === event.endDate) {
-      var date = event.date;
+    var startingDate = new Date(event.date);
+    var endingDate = new Date(event.endDate);
+
+    if (startingDate.getYear() === endingDate.getYear() && startingDate.getMonth() === endingDate.getMonth() && startingDate.getDay() === endingDate.getDay()) {
+      var date = $.format.date(event.date, "MMM d");
     } else {
-      var date = event.date + " to " + event.endDate;
+      var date = $.format.date(event.date, "MMM d") + " to " + $.format.date(event.endDate, "MMM d");
     };
 
     // populate overlay
-    $("#eventImg").html("<img src=" + eventImage + ">");
+//    $("#eventImg").html("<img src=" + eventImage + ">");
+    $("#overlay").css("background-image", "url(" + eventImage + ")");
     $("#eventName").html(event.name);
     $("#eventDate").html(date);
     $("#eventDesc").html(event.description);
@@ -97,6 +103,10 @@ $(window).load(function () {
     document.title = d.name;
 
     $("#event-scroll").empty();
+
+    d.events.sort(function(a, b) {
+      return Date.parse(a.date) - Date.parse(b.date);
+    });
 
     // populate map and bottom scroll w/ markers
     for (var i = 0; i < d.events.length; i++) {
