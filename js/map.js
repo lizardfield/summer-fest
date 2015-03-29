@@ -37,10 +37,11 @@ $(window).load(function () {
     shadowAnchor: [12, 20]
   });
 
-  var placeEvents = function(event) {
+  var placeEvent = function(event) {
+
     // add event marker to map
     L.marker([event.latitude,event.longitude], {icon: myIcon})
-    .addEventListener("click", showEvent, event)
+    .addEventListener("click", getEvent, {id: event.id})
     .addTo(map);
 
     // set default image for bottom scroll
@@ -50,57 +51,56 @@ $(window).load(function () {
     };
 
     // add event to bottom scroll
-    $("#event-scroll").append("<li class='event'><a href=#><img src='" + eventImage + "' alt='" + event.name + "'><h2>" + event.name + "<br>" + event.date + "</h2></a></li>");
+    var eventBox = $("<li/>", { "class": "event",}).bind("click", function() { getEvent.call({id: event.id}); } );
+    eventBox.append("<a href=#><img src='" + eventImage + "' alt='" + event.name + "'><h2>" + event.name + "<br>" + event.date + "</h2></a>");
+    $("#event-scroll").append(eventBox);
+
+
+    // $("#event-scroll").append("<li class='event'><a href=#><img src='" + eventImage + "' alt='" + event.name + "'><h2>" + event.name + "<br>" + event.date + "</h2></a></li>")
+
+    // $
   }
 
-  // image URL is incorrect
-
-  var placeSubevents = function(subevent) {
-    $("#subevent-scroll").append("<li>" + subevent.name + "</li>");
+  var getEvent = function() {
+    getData("http://127.0.0.1:8000/photoMap/api/events/" + this.id, populateOverlay);
   }
 
-  var showEvent = function(event) {
+  var populateOverlay = function(event) {
     // set default image
-    var eventImage = this.image;
+    var eventImage = event.image;
     if (eventImage === null) {
       var eventImage = "http://4.bp.blogspot.com/-MzZCzWI_6Xc/UIUQp1qPfzI/AAAAAAAAHpA/OTwHCJSWFAY/s1600/cats_animals_kittens_cat_kitten_cute_desktop_1680x1050_hd-wallpaper-753974.jpeg";
     };
 
     // if it's only one day, just put the date once
-    if (this.date === this.endDate) {
-      var date = this.date;
+    if (event.date === event.endDate) {
+      var date = event.date;
     } else {
-      var date = this.date + " to " + this.endDate;
+      var date = event.date + " to " + event.endDate;
     };
 
     // populate overlay
     $("#eventImg").html("<img src=" + eventImage + ">");
-    $("#eventName").html(this.name);
+    $("#eventName").html(event.name);
     $("#eventDate").html(date);
-    $("#eventDesc").html(this.description);
+    $("#eventDesc").html(event.description);
 
     $("#overlay").fadeToggle("fast");
     $("#fade-bg").fadeToggle("fast");
 
   }
 
-//  var populateSidebar = function(d) {
-//    $("#subevent-scroll").empty();
-//    getData("http://127.0.0.1:8000/photoMap/api/events/" + );
-//  }
-// how to know total # of subevents? does there need to be a subevent array in api/maps?
-
   var populateMap = function(d) {
+
     // replace titles
     $(".interactive-title").html(d.name);
     document.title = d.name;
-    $(".sidebar-title").html("Filter by " + d.subevent_type);
 
     $("#event-scroll").empty();
 
-    // populate map w/ markers
+    // populate map and bottom scroll w/ markers
     for (var i = 0; i < d.events.length; i++) {
-      getData("http://127.0.0.1:8000/photoMap/api/events/" + d.events[i], placeEvents);
+      placeEvent(d.events[i]);
     }
   };
 

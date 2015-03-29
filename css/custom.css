@@ -49,12 +49,6 @@ a:focus {
 	}
 } /* not working, not sure why */
 
-#subevent-scroll {
-	padding: 0;
-	margin: 0;
-  	list-style: none;
-}
-
 .bottom-box-outer {
 	background-color: #5E5E5E;
 	display: inline-block;
