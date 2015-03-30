@@ -61,15 +61,11 @@ a:focus {
 }
 
 .interactive-title {
-	text-align: center;
 	display: inline;
 	font-family: inherit;
   	font-weight: 500;
-  	line-height: 1.1;
-  	color: inherit;
-  	margin-top: 20px;
-  	margin-bottom: 10px;
-  	padding-left: 20px;
+	padding-left: 30px;
+	padding-top: 10px;
     font-size: 30px;
 }
 
@@ -127,7 +123,7 @@ a:focus {
 /* event details pop-up upon click on marker */
 #overlay {
 	background-image: none;
-	background-size: 100%;
+	background-size: cover;
 	z-index: 20;
 	position: absolute;
 	top: 6%;
@@ -135,14 +131,29 @@ a:focus {
 	right: 6%;
 	bottom: 6%;
 	margin: auto;
-	padding: 20px;
+	padding-left: 70px;
+	padding-right: 70px;
 	border-radius: 5px;
 	overflow-y: scroll;
 }
 
+#exit-button {
+/*	border-color: #000000;
+	border-style: solid;
+	border-radius: 5px;
+	border-width: 1px; */
+	z-index: 21;
+	font-size: 30px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+
 #exit-button:hover {
 	color: #808080;
-	text-decoration: underline;
+	text-decoration: none;
+	cursor: pointer;
 }
 
 .background {
@@ -159,7 +170,6 @@ a:focus {
 	z-index: 2;
 	opacity: 0.5;
 	background-color: #000000;
-	pointer-events: none;
 	cursor: default;
 }
 
@@ -173,20 +183,23 @@ a:focus {
     box-shadow: 0 0 1px rgba(255,255,255,.5);
 }
 
-.leaflet-bottom {
-	z-index: 2; 
-}
-
 #overlay-text {
 	background: rgba(0, 0, 0, 0.75);
 	color: white;
 	font-family: 'Roboto', sans-serif;
-	font-weight: 900;
 	position: relative;
 	top: 50%;
 	    -webkit-transform: translateY(-50%);
 	    -ms-transform: translateY(-50%);
 	    transform: translateY(-50%);
 	text-align: center;
-	padding: 50px;
+	padding: 20px;
+	padding-left: 170px;
+	padding-right: 170px; 
+	border-radius: 5px;
+}
+
+.leaflet-bottom,
+.leaflet-control {
+	z-index: 2; 
 }

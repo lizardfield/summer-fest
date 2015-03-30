@@ -480,3 +480,7 @@
 	background: #fff;
 	border: 1px solid #666;
 	}
+
+.leaflet-control {
+	z-index: 2;
+}

@@ -15,10 +15,16 @@ var defaultImage = "http://www.nbn.org.il/gosouth/wp-content/uploads/2014/05/sum
 
 $(window).load(function () {
 
+  // set map's max bounds
+  var cornerSW = L.latLng(51.0000,-128.0000),
+      cornerNE = L.latLng(22.0000,-68.0000),
+      bounds = L.latLngBounds(cornerSW, cornerNE);
 
   var map = L.map('map', {
     zoomControl: false,
     layers: MQ.mapLayer(),
+    maxBounds: bounds,
+    minZoom: 4,
   }).setView([39.50,-98.35], 4);
 
  // move zoom controls to top right
@@ -86,7 +92,8 @@ $(window).load(function () {
 
     // populate overlay
 //    $("#eventImg").html("<img src=" + eventImage + ">");
-    $("#overlay").css("background-image", "url(" + eventImage + ")");
+    $("#overlay")
+      .css("background-image", "url(" + eventImage + ")");
     $("#eventName").html(event.name);
     $("#eventDate").html(date);
     $("#eventDesc").html(event.description);
@@ -119,6 +126,11 @@ $(window).load(function () {
   $("#overlay").hide();
   $("#fade-bg").hide();
   $("#exit-button").click(function() {
+    $("#overlay").fadeToggle("fast");
+    $("#fade-bg").fadeToggle("fast");
+  });
+
+  $("#fade-bg").click(function() {
     $("#overlay").fadeToggle("fast");
     $("#fade-bg").fadeToggle("fast");
   });
