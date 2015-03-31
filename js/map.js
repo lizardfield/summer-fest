@@ -37,12 +37,11 @@ $(window).load(function () {
     iconUrl: './images/marker-icon.png',
     iconRetinaUrl: './images/marker-icon-2x.png',
     iconSize: [25, 41],
-    iconAnchor: [12.5, 20.5],
-    //popupAnchor: [-3, -76],
+    iconAnchor: [12, 40],
     shadowUrl: './images/marker-shadow.png',
     shadowRetinaUrl: './images/marker-shadow.png',
     shadowSize: [41, 41],
-    shadowAnchor: [12, 20]
+    shadowAnchor: [12, 40]
   });
 
   var placeEvent = function(event) {
@@ -106,7 +105,7 @@ $(window).load(function () {
   var populateMap = function(d) {
 
     // replace titles
-    $(".interactive-title").html(d.name);
+    $("#interactive-title").html(d.name);
     document.title = d.name;
 
     $("#event-scroll").empty();
