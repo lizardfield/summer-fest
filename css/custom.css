@@ -12,7 +12,7 @@ html, body {
 	width: 100%;
 }
 
-a {
+/*a {
 	color: #B7B7B7;
 	text-decoration: none;
 }
@@ -25,7 +25,7 @@ a:focus {
 	outline: thin dotted;
 	outline: 5px auto -webkit-focus-ring-color;
 	outline-offset: -2px;
-}
+}*/
 
 .sidebar-title {
 	text-align: center;
@@ -80,6 +80,7 @@ a:focus {
 }
 
 #map {
+	width: 100%;
 	height: 79%;
 }
 
@@ -121,7 +122,8 @@ a:focus {
 	transform: translate(-50%, -50%);
 }
 
-#exit-button {
+#exit-button,
+#attr-exit-button {
 	border-color: #FFFFFF;
 	color: #FFFFFF;
 	border-style: solid;
@@ -137,7 +139,8 @@ a:focus {
 	padding: 9px;
 }
 
-#exit-button:hover {
+#exit-button:hover,
+#attr-exit-button:hover {
 	color: #808080;
 	border-color: #808080;
 	text-decoration: none;
@@ -149,7 +152,8 @@ a:focus {
 	position: relative;
 }
 
-#fade-bg {
+#fade-bg,
+#attr-fade-bg {
 	position: absolute;
 	top: 0%;
 	left: 0%;
@@ -172,7 +176,8 @@ a:focus {
 }
 
 #overlay,
-#overlay-box {
+#overlay-box,
+#attribution-overlay {
 	z-index: 20;
 	position: absolute;
 	height: 88%;
@@ -208,6 +213,53 @@ a:focus {
 	padding-left: 170px;
 	padding-right: 170px; 
 	border-radius: 5px;
+}
+
+#attribution-link {
+	font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 22px;
+    padding-right: 5px;
+    z-index: 2;
+    position: absolute;
+    bottom: 15px;
+    text-align: right;
+    right: 0px;
+}
+
+#attribution-link:hover {
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
+#attribution-overlay {
+	background: #FFFFFF;
+	padding: 50px;
+	overflow-y: scroll;
+}
+
+.attContainer {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 200px;
+}
+
+.attPortraitContainer {
+    border-radius: 90px;
+    border-style: solid;
+    border-width: 2px;
+    height: 125px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    width: 125px;
+}
+
+.attContainer h3 {
+    margin-top: 7px;
+    text-align: center;
 }
 
 .leaflet-bottom,

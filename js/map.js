@@ -122,6 +122,8 @@ $(window).load(function () {
 
   getData("http://127.0.0.1:8000/photoMap/api/maps/1/", populateMap);
 
+  $("#attribution-overlay").hide();
+  $("#attr-fade-bg").hide();
   $("#overlay").hide();
   $("#fade-bg").hide();
   $("#exit-button").click(function() {
@@ -132,6 +134,16 @@ $(window).load(function () {
   $("#fade-bg").click(function() {
     $("#overlay").fadeToggle("fast");
     $("#fade-bg").fadeToggle("fast");
+  });
+
+  $("#attribution-link").click(function() {
+    $("#attribution-overlay").fadeToggle("fast");
+    $("#attr-fade-bg").fadeToggle("fast");
+  });
+
+  $("#attr-exit-button").click(function() {
+    $("#attribution-overlay").fadeToggle("fast");
+    $("#attr-fade-bg").fadeToggle("fast");
   });
 
 });
