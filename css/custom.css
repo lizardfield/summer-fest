@@ -122,34 +122,20 @@ a:focus {
 	transform: translate(-50%, -50%);
 }
 
-/* event details pop-up upon click on marker */
-#overlay {
-	background-image: none;
-	background-size: cover;
-	z-index: 20;
-	position: absolute;
-	height: 88%;
-	top: 6%;
-	left: 6%;
-	right: 6%;
-	bottom: 6%;
-	padding-left: 70px;
-	padding-right: 70px;
-	border-radius: 5px;
-	overflow-y: scroll;
-}
-
 #exit-button {
-/*	border-color: #000000;
+	border-color: #FFFFFF;
+	color: #FFFFFF;
 	border-style: solid;
 	border-radius: 40px;
-	border-width: 1px; */
+	border-width: 1px;
+	background-color: #000000;
 	z-index: 21;
-	font-size: 30px;
+	font-size: 20px;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 	position: absolute;
-	top: 20px;
-	left: 20px;
+	margin-top: -19px;
+    margin-left: -19px;
+	padding: 9px;
 }
 
 #exit-button:hover {
@@ -183,6 +169,26 @@ a:focus {
     border-radius: 4px;
     background-color: rgba(0,0,0,.5);
     box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+#overlay,
+#overlay-box {
+	z-index: 20;
+	position: absolute;
+	height: 88%;
+	top: 6%;
+	left: 6%;
+	right: 6%;
+	bottom: 6%;
+	border-radius: 5px;
+}
+
+#overlay-box {
+	padding-left: 70px;
+	padding-right: 70px;
+	background-image: none;
+	background-size: cover;
+	overflow-y: scroll;
 }
 
 #overlay-text {
