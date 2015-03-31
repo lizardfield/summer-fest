@@ -27,7 +27,6 @@ a:focus {
 	outline-offset: -2px;
 }
 
-/* "Find an Artist" */
 .sidebar-title {
 	text-align: center;
 	color: #EDEDED;
@@ -81,7 +80,7 @@ a:focus {
 }
 
 #map {
-	height: 80%;
+	height: 79%;
 }
 
 #event-scroll {
@@ -140,6 +139,7 @@ a:focus {
 
 #exit-button:hover {
 	color: #808080;
+	border-color: #808080;
 	text-decoration: none;
 	cursor: pointer;
 }
