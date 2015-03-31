@@ -146,4 +146,9 @@ $(window).load(function () {
     $("#attr-fade-bg").fadeToggle("fast");
   });
 
+  $("#attr-fade-bg").click(function() {
+    $("#attribution-overlay").fadeToggle("fast");
+    $("#attr-fade-bg").fadeToggle("fast");
+  });
+
 });

@@ -177,7 +177,8 @@ a:focus {
 
 #overlay,
 #overlay-box,
-#attribution-overlay {
+#attribution-overlay,
+#attribution-box {
 	z-index: 20;
 	position: absolute;
 	height: 88%;
@@ -188,11 +189,16 @@ a:focus {
 	border-radius: 5px;
 }
 
+#attribution-box {
+	overflow-y: scroll;
+}
+
 #overlay-box {
 	padding-left: 70px;
 	padding-right: 70px;
 	background-image: none;
 	background-size: cover;
+	height: 100%;
 	overflow-y: scroll;
 }
 
@@ -233,7 +239,7 @@ a:focus {
 	cursor: pointer;
 }
 
-#attribution-overlay {
+#attribution-box {
 	background: #FFFFFF;
 	padding: 50px;
 	overflow-y: scroll;
