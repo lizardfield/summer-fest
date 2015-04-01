@@ -91,7 +91,7 @@ $(window).load(function () {
 
     // populate overlay
 //    $("#eventImg").html("<img src=" + eventImage + ">");
-    $("#overlay")
+    $("#overlay-box")
       .css("background-image", "url(" + eventImage + ")");
     $("#eventName").html(event.name);
     $("#eventDate").html(date);

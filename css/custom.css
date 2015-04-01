@@ -181,16 +181,20 @@ a:focus {
 #attribution-box {
 	z-index: 20;
 	position: absolute;
-	height: 88%;
-	top: 6%;
-	left: 6%;
-	right: 6%;
-	bottom: 6%;
 	border-radius: 5px;
 }
 
 #attribution-box {
 	overflow-y: scroll;
+}
+
+#overlay,
+#attribution-overlay {
+	height: 88%;
+	top: 6%;
+	left: 6%;
+	right: 6%;
+	bottom: 6%;
 }
 
 #overlay-box {
